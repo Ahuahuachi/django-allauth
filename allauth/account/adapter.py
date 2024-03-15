@@ -368,6 +368,8 @@ class DefaultAccountAdapter(BaseAdapter):
         Wrapper of `django.contrib.messages.add_message`, that reads
         the message text from a template.
         """
+        if getattr(request.allauth, "headless", None):
+            return
         if "django.contrib.messages" in settings.INSTALLED_APPS:
             try:
                 if message_context is None:
