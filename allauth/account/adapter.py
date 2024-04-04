@@ -47,6 +47,9 @@ from . import app_settings
 class DefaultAccountAdapter(BaseAdapter):
     error_messages = {
         "account_inactive": _("This account is currently inactive."),
+        "cannot_remove_primary_email": _(
+            "You cannot remove your primary email address."
+        ),
         "duplicate_email": _(
             "This email address is already associated with this account."
         ),
@@ -56,12 +59,14 @@ class DefaultAccountAdapter(BaseAdapter):
         "email_taken": _("A user is already registered with this email address."),
         "enter_current_password": _("Please type your current password."),
         "incorrect_password": _("Incorrect password."),
+        "invalid_or_expired_key": _("Invalid or expired key."),
         "invalid_password_reset": _("The password reset token was invalid."),
         "max_email_addresses": _("You cannot add more than %d email addresses."),
         "too_many_login_attempts": _(
             "Too many failed login attempts. Try again later."
         ),
         "unknown_email": _("The email address is not assigned to any user account"),
+        "unverified_primary_email": _("Your primary email address must be verified."),
         "username_blacklisted": _(
             "Username can not be used. Please use other username."
         ),
